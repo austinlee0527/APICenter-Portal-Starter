@@ -25,7 +25,7 @@ const Options: FC<{ api: Api; version?: string; definition?: string }> = ({ api,
     }, [schemaUrl]);
     
     const getSpecificationLink = async () => {
-        if (!version || !definition) return;
+        //if (!version || !definition) return;
 
         const downloadUrl = await apiService.getSpecificationLink(api.name, version, definition);
 
@@ -64,8 +64,9 @@ const Options: FC<{ api: Api; version?: string; definition?: string }> = ({ api,
                                 Open in Visual Studio Code
                             </Button>
                         </div>
+                        <SwaggerUI url={schemaUrl} />
                     </div>
-                    <SwaggerUI url={schemaUrl} />
+                    
                 </div>
             )}
         </div>
