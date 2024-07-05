@@ -13,6 +13,9 @@ import { useApiService } from "../../../util/useApiService";
 
 import css from "./index.module.scss";
 
+import SwaggerUI from "swagger-ui-react"
+import "swagger-ui-react/swagger-ui.css"
+
 const Options: FC<{ api: Api; version?: string; definition?: string }> = ({ api, version, definition }) => {
     const apiService = useApiService();
     const [schemaUrl, setSchemaUrl] = useState("");    
@@ -62,6 +65,7 @@ const Options: FC<{ api: Api; version?: string; definition?: string }> = ({ api,
                             </Button>
                         </div>
                     </div>
+                    <SwaggerUI url={schemaUrl} />
                 </div>
             )}
         </div>
